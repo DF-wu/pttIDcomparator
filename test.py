@@ -107,6 +107,8 @@ def output(result):
         print("輸出 {} 個結果".format(length))
 
 
+
+# 用 ID 搜尋前 10 相似文章
 def inputId():
     # 500 hikku
     # 1000 eten
@@ -155,9 +157,9 @@ def loadDicts(fileSlice):
 
 
 def main():     
-    fileSlice = "4000"
-    readFile("gossiping_dataset_seg" + fileSlice + ".json")
-    if (path.exists("gossiping_dataset_wordListDict"+fileSlice+ ".json") and path.exists("gossiping_dataset_docWordDict"+fileSlice+ ".json") and path.exists("gossiping_dataset_normDocWordDict"+fileSlice+ ".json")):
+    fileSlice = ""
+    readFile("gossiping_dataset_seg_filtered" + fileSlice + ".json")
+    if (path.exists("gossiping_dataset_wordListDict" + fileSlice+ ".json") and path.exists("gossiping_dataset_docWordDict"+fileSlice+ ".json") and path.exists("gossiping_dataset_normDocWordDict"+fileSlice+ ".json")):
         loadDicts(fileSlice)
     else:
         createDicts()
